@@ -1,0 +1,23 @@
+.content-header h1 a:hover{
+	text-decoration:none;
+}
+.skin-green .main-header a.logo {
+	text-decoration:none;
+}
+.clear{
+	clear: both;
+}
+.errors{
+    /*background: rgb(243, 220, 214);*/
+    border: solid 1px #ffbeb1;
+}
+table.table tr > td{
+	vertical-align: middle;
+}
+
+div.gallery >img{
+	padding: 5px;
+	width: 75px;
+	height: 75px;
+	float: left;
+}
