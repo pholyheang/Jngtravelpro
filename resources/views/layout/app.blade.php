@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css')}}">
+	<!-- <link rel="stylesheet" type="text/css" href="{{ asset('css/menu.css')}}"> -->
 	<script type="text/javascript" src="{{ asset('js/app.js')}}"></script>
 	<script type="text/javascript" src="{{ asset('js/custom.js')}}"></script>
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

@@ -19,7 +19,9 @@
 Route::get('/login','UserController@getLoginForm')->name('getlogin');
 Route::post('/login', 'UserController@doLogin')->name('doLogin');
 
-Route::get('system/help', 'HelpController@index')->name('help');
+Route::get('system/help', 'HelpController@show')->name('show');
+Route::get('system/help/{slug}', 'HelpController@index')->name('help');
+Route::get('system/search', 'HelpController@research')->name('research');
 
 //--------------------|||||-- front end section -----|||||||----------
 
