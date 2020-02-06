@@ -13,7 +13,7 @@ class AdminController extends Controller
     public function getAdmin(){
     	return view('admin.index');
     }
-
+// fdsafdsafdsafds
     public function getSlide(){
     	$slides = SlideShow::orderBy('title', 'ASC')->get();
     	return view('admin.slide.SlideList', compact('slides'));
