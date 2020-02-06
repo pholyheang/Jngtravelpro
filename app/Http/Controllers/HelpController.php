@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Docs;
 
 class HelpController extends Controller
 {
@@ -11,11 +12,24 @@ class HelpController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return $users = \DB::connection('deb_bookingdb')->select("select * from tbl_docs")->get();
-        return view('docs.help.index');
+    public function index($getslug)
+    {   
+        $item = Docs::where('slug', $getslug)->first();
+        return view('docs.help.index', compact('item'));
+    }
 
+    public function research(Request $req)
+    {        
+        $data_dosc = Docs::where('title', 'like', '%' . $req->search . '%')->get();
+        $arrayName = [];
+        foreach ($data_dosc as $key => $value) {
+
+            $arrayName[] = array('id' => $value->id ,
+                               'title' => $value->title ,
+                               'desc' => str_limit($value->desc, 300) ,
+                               'slug' => $value->slug );
+        }
+        return response()->json($arrayName);
     }
 
     /**
@@ -45,9 +59,9 @@ class HelpController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('docs.help.search');
     }
 
     /**
